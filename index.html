@@ -1,33 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TimeToGo</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <header>
-        <nav>
-        </nav>
-    </header>
-    <section class="hero">
-        <h1>TimeToGo</h1>
-        <p>Your perfect app for finding perfect villa's and hotel's as per your preferences!</p>
-    </section><br><br><br><br>
-    <section class="about">
-        <h2>About TimeToGo</h2>
-        <p>TimeToGo is a CLI based application designed to help you find the perfect accommodation based on ratings and reviews provided by Google Maps, a well and trusted source of information.</p>
-    </section><br><br><br><br>
-    <section class="download">
-        <h2>Download TimeToGo</h2>
-        <p>Ready to find your perfect stay? Download TimeToGo now and start exploring the best accommodations tailored to your preferences. Whether you're planning a romantic getaway, a family vacation, or a solo adventure, TimeToGo will help you find the ideal place to stay. Don't miss out on the opportunity to make your next trip unforgettable with TimeToGo!</p>
-        Donwload <a href="timetogo.zip" download>For PC</a> or download via github at <a href="https://github.com/AyaanDhalait/TimeToGo" target="_blank">TimeToGo on GitHub</a>
-        <p class="not-avail">! Not available for iOS and Android !</p>
-    </section>
 
-    <footer>
-        <p>&copy; 2024 TimeToGo. Built by <a href="https://www.ayaan.is-a.dev" target="_blank">Ayaan Dhalait</a>.</p>
-    </footer>
+<body>
+
+<header class="navbar">
+    <div class="logo">TimeToGo</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="mailto:support@timetogo.ayaan.is-a.dev">Support</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>TimeToGo</h1>
+        <p>
+            Find the perfect villas and hotels tailored to your preferences using real Google Maps data.
+        </p>
+        <a class="cta" href="#download">Download Now</a>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2>About</h2>
+    <p>
+        TimeToGo is a CLI-based tool that helps you discover the best stays based on ratings, reviews,
+        and real-world Google Maps data. Fast, simple, and built for travelers who care about quality.
+    </p>
+</section>
+
+<section id="features" class="section">
+    <h2>Features</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Smart Filtering</h3>
+            <p>Find stays based on ratings, reviews, and preferences instantly.</p>
+        </div>
+
+        <div class="card">
+            <h3>Google Maps Data</h3>
+            <p>Uses trusted and real-time information from Google Maps.</p>
+        </div>
+
+        <div class="card">
+            <h3>Fast CLI Experience</h3>
+            <p>Lightweight command-line tool designed for speed.</p>
+        </div>
+    </div>
+</section>
+
+<section id="download" class="section download">
+    <h2>Download</h2>
+
+    <p>
+        Get TimeToGo and start finding better stays for your next trip.
+    </p>
+
+    <div class="download-box">
+        <a class="btn" href="timetogo.zip" download>Download for PC</a>
+        <a class="btn outline" href="https://github.com/AyaanDhalait/TimeToGo" target="_blank">
+            View on GitHub
+        </a>
+    </div>
+
+    <p class="note">⚠ Not available for iOS or Android yet</p>
+</section>
+
+<section class="section contact">
+    <h2>Support</h2>
+    <p>
+        Need help or want to report an issue?
+    </p>
+    <a class="email" href="mailto:support@timetogo.ayaan.is-a.dev">
+        support@timetogo.ayaan.is-a.dev
+    </a>
+</section>
+
+<footer>
+    <p>
+        © 2024 TimeToGo • Built by
+        <a href="https://www.ayaan.is-a.dev" target="_blank">Ayaan Dhalait</a>
+    </p>
+</footer>
+
 </body>
 </html>
