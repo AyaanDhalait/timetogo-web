@@ -15,25 +15,21 @@
         <a href="#about">About</a>
         <a href="#features">Features</a>
         <a href="#download">Download</a>
-        <a href="mailto:support@timetogo.ayaan.is-a.dev">Support</a>
+        <a href="#support">Support</a>
     </nav>
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>TimeToGo</h1>
-        <p>
-            Find the perfect villas and hotels tailored to your preferences using real Google Maps data.
-        </p>
-        <a class="cta" href="#download">Download Now</a>
-    </div>
+    <h1>TimeToGo</h1>
+    <p>Find the perfect villas and hotels tailored to your preferences using trusted data.</p>
+    <a class="cta" href="#download">Download Now</a>
 </section>
 
 <section id="about" class="section">
     <h2>About</h2>
     <p>
-        TimeToGo is a CLI-based tool that helps you discover the best stays based on ratings, reviews,
-        and real-world Google Maps data. Fast, simple, and built for travelers who care about quality.
+        TimeToGo is a CLI-based application that helps you find the best stays using ratings,
+        reviews, and Google Maps data.
     </p>
 </section>
 
@@ -43,46 +39,42 @@
     <div class="grid">
         <div class="card">
             <h3>Smart Filtering</h3>
-            <p>Find stays based on ratings, reviews, and preferences instantly.</p>
+            <p>Quickly find the best stays based on your preferences.</p>
         </div>
 
         <div class="card">
-            <h3>Google Maps Data</h3>
-            <p>Uses trusted and real-time information from Google Maps.</p>
+            <h3>Trusted Data</h3>
+            <p>Powered by real Google Maps ratings and reviews.</p>
         </div>
 
         <div class="card">
-            <h3>Fast CLI Experience</h3>
-            <p>Lightweight command-line tool designed for speed.</p>
+            <h3>Fast CLI Tool</h3>
+            <p>Lightweight, simple, and built for speed.</p>
         </div>
     </div>
 </section>
 
-<section id="download" class="section download">
+<section id="download" class="section">
     <h2>Download</h2>
 
-    <p>
-        Get TimeToGo and start finding better stays for your next trip.
-    </p>
+    <p>Start using TimeToGo today.</p>
 
-    <div class="download-box">
+    <div class="buttons">
         <a class="btn" href="timetogo.zip" download>Download for PC</a>
-        <a class="btn outline" href="https://github.com/AyaanDhalait/TimeToGo" target="_blank">
-            View on GitHub
-        </a>
+        <a class="btn outline" href="https://github.com/AyaanDhalait/TimeToGo" target="_blank">GitHub</a>
     </div>
-
-    <p class="note">⚠ Not available for iOS or Android yet</p>
 </section>
 
-<section class="section contact">
+<section id="support" class="section">
     <h2>Support</h2>
-    <p>
-        Need help or want to report an issue?
-    </p>
-    <a class="email" href="mailto:support@timetogo.ayaan.is-a.dev">
-        support@timetogo.ayaan.is-a.dev
-    </a>
+    <p>Need help or found a bug?</p>
+
+    <div class="email-box">
+        <span id="emailText">support@timetogo.ayaan.is-a.dev</span>
+        <button onclick="copyEmail()">Copy Email</button>
+    </div>
+
+    <p id="copiedMsg" class="copied">Copied!</p>
 </section>
 
 <footer>
@@ -91,6 +83,20 @@
         <a href="https://www.ayaan.is-a.dev" target="_blank">Ayaan Dhalait</a>
     </p>
 </footer>
+
+<script>
+function copyEmail() {
+    const email = document.getElementById("emailText").innerText;
+    navigator.clipboard.writeText(email);
+
+    const msg = document.getElementById("copiedMsg");
+    msg.style.opacity = 1;
+
+    setTimeout(() => {
+        msg.style.opacity = 0;
+    }, 1200);
+}
+</script>
 
 </body>
 </html>
