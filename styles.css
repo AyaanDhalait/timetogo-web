@@ -6,33 +6,40 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #0b0b0c;
+    background: #050505;
     color: #fff;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND GLOW */
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 30%, #1f1f1f 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #111 0%, transparent 40%);
+    z-index: -1;
 }
 
 /* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px 40px;
+    backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
-    backdrop-filter: blur(10px);
-    background: rgba(11,11,12,0.6);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .logo {
     font-weight: 700;
-    font-size: 18px;
 }
 
 nav a {
     margin-left: 20px;
-    text-decoration: none;
     color: #aaa;
-    transition: 0.2s;
+    text-decoration: none;
 }
 
 nav a:hover {
@@ -41,57 +48,82 @@ nav a:hover {
 
 /* HERO */
 .hero {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 20px;
-    background: radial-gradient(circle at center, #111 0%, #000 100%);
+    padding: 120px 20px 60px;
 }
 
 .hero h1 {
-    font-size: 52px;
-    font-weight: 700;
+    font-size: 56px;
+}
+
+.hero h1 span {
+    color: #9b5cff;
+    text-shadow: 0 0 20px #9b5cff;
 }
 
 .hero p {
     margin-top: 10px;
     color: #aaa;
-    max-width: 500px;
-}
-
-.hero-buttons {
-    margin-top: 25px;
 }
 
 /* BUTTONS */
 .btn {
-    padding: 12px 20px;
+    padding: 12px 22px;
     border-radius: 10px;
+    margin: 10px;
     text-decoration: none;
-    font-weight: 600;
-    margin: 5px;
     display: inline-block;
     transition: 0.2s;
 }
 
 .btn.primary {
-    background: #fff;
-    color: #000;
+    background: linear-gradient(135deg, #9b5cff, #6f00ff);
+    color: white;
 }
 
 .btn.primary:hover {
-    background: #ddd;
+    transform: scale(1.05);
 }
 
-.btn.secondary {
-    border: 1px solid #444;
+.btn.ghost {
+    border: 1px solid #333;
     color: #fff;
 }
 
-.btn.secondary:hover {
+.btn.ghost:hover {
     background: #111;
+}
+
+/* TERMINAL */
+.terminal {
+    margin: 40px auto;
+    max-width: 600px;
+    background: #0d0d0d;
+    border-radius: 12px;
+    border: 1px solid #222;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.terminal-header {
+    display: flex;
+    gap: 6px;
+    padding: 10px;
+}
+
+.terminal-header span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #444;
+}
+
+.terminal-body {
+    padding: 15px;
+    font-size: 14px;
+}
+
+.output {
+    color: #7cffc4;
 }
 
 /* SECTIONS */
@@ -101,75 +133,77 @@ nav a:hover {
     margin: auto;
 }
 
-.section h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+/* CARDS */
 .card {
-    background: #111;
-    border: 1px solid rgba(255,255,255,0.05);
     padding: 20px;
     border-radius: 14px;
-    transition: 0.2s;
+    background: #0d0d0d;
+    border: 1px solid #222;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-6px);
 }
 
-/* EMAIL BOX */
+/* GLOW EFFECT */
+.glow:hover {
+    box-shadow: 0 0 20px rgba(155,92,255,0.4);
+}
+
+/* INSTALL BOX */
+.install-box {
+    display: flex;
+    justify-content: space-between;
+    background: #0d0d0d;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.install-box button {
+    background: #9b5cff;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* EMAIL */
 .email-box {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
     margin-top: 15px;
 }
 
 .email-box span {
-    padding: 10px;
     background: #111;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 6px;
 }
 
 .email-box button {
-    padding: 10px 14px;
-    border: none;
     background: #fff;
     color: #000;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.email-box button:hover {
-    background: #ddd;
-}
-
-.copied {
-    margin-top: 10px;
-    opacity: 0;
-    transition: 0.3s;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 40px 20px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
+    opacity: 0.6;
 }
 
 /* MOBILE */
@@ -180,5 +214,9 @@ footer a {
 
     nav {
         display: none;
+    }
+
+    .terminal {
+        font-size: 12px;
     }
 }
