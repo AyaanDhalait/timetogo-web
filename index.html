@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TimeToGo</title>
-<link rel="stylesheet" href="styles.css" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<div class="bg"></div>
+
 <header class="navbar">
     <div class="logo">TimeToGo</div>
     <nav>
-        <a href="#about">About</a>
         <a href="#features">Features</a>
         <a href="#download">Download</a>
         <a href="#support">Support</a>
@@ -21,58 +23,65 @@
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>Find Your Perfect Stay</h1>
-        <p>Smart CLI-powered tool to discover the best villas & hotels using real-world data.</p>
-        <div class="hero-buttons">
-            <a class="btn primary" href="#download">Download</a>
-            <a class="btn secondary" href="https://github.com/AyaanDhalait/TimeToGo" target="_blank">GitHub</a>
+    <h1>Find stays like a <span>hacker</span></h1>
+    <p>CLI-powered hotel discovery using real-world data. Fast. Smart. Minimal.</p>
+
+    <div class="hero-buttons">
+        <a href="#download" class="btn primary">Get Started</a>
+        <a href="https://github.com/AyaanDhalait/TimeToGo" target="_blank" class="btn ghost">GitHub</a>
+    </div>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="terminal-body">
+            <p><span>$</span> timetogo search goa villa budget=5000</p>
+            <p class="output">→ Found 12 top-rated stays ⭐</p>
+            <p class="output">→ Best: OceanView Villa (4.8★)</p>
         </div>
     </div>
-</section>
-
-<section id="about" class="section">
-    <h2>About</h2>
-    <p>
-        TimeToGo is a powerful CLI tool that helps you discover top-rated stays using
-        real Google Maps data — fast, minimal, and efficient.
-    </p>
 </section>
 
 <section id="features" class="section">
     <h2>Features</h2>
 
     <div class="grid">
-        <div class="card">
-            <h3>Smart Filtering</h3>
-            <p>Find exactly what you want instantly with intelligent filters.</p>
+        <div class="card glow">
+            <h3>⚡ Smart Filtering</h3>
+            <p>Find the exact stay you want instantly.</p>
         </div>
 
-        <div class="card">
-            <h3>Real Data</h3>
-            <p>Uses actual ratings & reviews from Google Maps.</p>
+        <div class="card glow">
+            <h3>📍 Real Data</h3>
+            <p>Powered by real Google Maps ratings.</p>
         </div>
 
-        <div class="card">
-            <h3>CLI Speed</h3>
-            <p>Blazing fast, lightweight, and developer-friendly.</p>
+        <div class="card glow">
+            <h3>💻 CLI First</h3>
+            <p>Built for speed and dev workflow.</p>
         </div>
     </div>
 </section>
 
 <section id="download" class="section">
-    <h2>Download</h2>
-    <p>Start using TimeToGo today.</p>
+    <h2>Install</h2>
+
+    <div class="install-box">
+        <code>pip install timetogo</code>
+        <button onclick="copyCmd()">Copy</button>
+    </div>
 
     <div class="buttons">
-        <a class="btn primary" href="timetogo.zip" download>Download for PC</a>
-        <a class="btn secondary" href="https://github.com/AyaanDhalait/TimeToGo" target="_blank">GitHub</a>
+        <a class="btn primary" href="timetogo.zip" download>Download</a>
+        <a class="btn ghost" href="https://github.com/AyaanDhalait/TimeToGo" target="_blank">GitHub</a>
     </div>
+
+    <p id="copiedCmd" class="copied">Copied!</p>
 </section>
 
 <section id="support" class="section">
     <h2>Support</h2>
-    <p>Need help or found a bug?</p>
 
     <div class="email-box">
         <span id="emailText">support@ayaan.is-a.dev</span>
@@ -83,23 +92,23 @@
 </section>
 
 <footer>
-    <p>
-        © 2026 TimeToGo • Built by
-        <a href="https://www.ayaan.is-a.dev" target="_blank">Ayaan</a>
-    </p>
+    <p>© 2026 TimeToGo • Built by Ayaan</p>
 </footer>
 
 <script>
 function copyEmail() {
     const email = document.getElementById("emailText").innerText;
     navigator.clipboard.writeText(email);
-
     const msg = document.getElementById("copiedMsg");
     msg.style.opacity = 1;
+    setTimeout(()=>msg.style.opacity=0,1200);
+}
 
-    setTimeout(() => {
-        msg.style.opacity = 0;
-    }, 1200);
+function copyCmd() {
+    navigator.clipboard.writeText("pip install timetogo");
+    const msg = document.getElementById("copiedCmd");
+    msg.style.opacity = 1;
+    setTimeout(()=>msg.style.opacity=0,1200);
 }
 </script>
 
